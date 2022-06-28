@@ -1,6 +1,5 @@
-import knex from 'knex';
+import knex from "knex";
 
 export interface DBConnection {
-    connection: knex;
+  connection: knex;
 }
-

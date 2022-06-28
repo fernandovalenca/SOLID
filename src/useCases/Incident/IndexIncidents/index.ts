@@ -3,9 +3,11 @@ import { IncidentsRepositoryImp } from "../../../repositories/Incidents/Incident
 import { IndexIncidentsUseCase } from "./IndexIncidentsUseCase";
 import { IndexIncidentsController } from "./IndexIncidentsController";
 
-const dbConnectionImp = new SQLiteConnectionImp;
+const dbConnectionImp = new SQLiteConnectionImp();
 const incidentsRepositoryImp = new IncidentsRepositoryImp(dbConnectionImp);
 const indexIncidentsUseCase = new IndexIncidentsUseCase(incidentsRepositoryImp);
-const indexIncidentsController = new IndexIncidentsController(indexIncidentsUseCase);
+const indexIncidentsController = new IndexIncidentsController(
+  indexIncidentsUseCase
+);
 
 export { indexIncidentsController, indexIncidentsUseCase };
